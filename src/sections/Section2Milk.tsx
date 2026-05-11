@@ -55,30 +55,29 @@ export default function Section2Milk() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative w-full h-screen overflow-hidden" style={{ zIndex: 20 }}>
+    <section ref={sectionRef} className="aura-section relative w-full h-screen overflow-hidden" style={{ zIndex: 20 }}>
       {/* Background */}
       <div className="absolute inset-0">
-        <img src="/images/milk_field_bg.jpg" alt="Fresh milk in field" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-r from-lime/50 via-lime/20 to-transparent" />
+        <img src="/images/milk_field_bg.jpg" alt="Fresh milk in field" className="aura-bg-image" />
+        <div className="aura-image-overlay" />
       </div>
 
       {/* Left Panel */}
       <div
         ref={panelRef}
-        className="absolute glass-panel p-8"
-        style={{ left: '6vw', top: '22vh', width: '42vw', height: '56vh', maxWidth: '560px' }}
+        className="aura-copy-panel glass-panel"
       >
-        <h2 className="font-display font-bold text-[#111] text-shadow-display leading-[0.95]">
-          <span className="word block text-[clamp(28px,4vw,56px)] uppercase tracking-tight">Fresh Milk</span>
-          <span className="word block text-[clamp(28px,4vw,56px)] uppercase tracking-tight mt-1">Sourced</span>
+        <h2 className="aura-display aura-display-md text-shadow-display">
+          <span className="word aura-heading-line">Fresh Milk</span>
+          <span className="word aura-heading-line mt-1">Sourced</span>
         </h2>
-        <p className="word mt-8 font-body text-[clamp(13px,1.1vw,16px)] text-[#2B2B2B] leading-relaxed max-w-[90%]">
-          We partner with dairies that prioritize animal welfare and land care—so every batch starts clean.
+        <p className="word aura-copy mt-8">
+          We partner with dairies that prioritize animal welfare and land care - so every batch starts clean.
         </p>
       </div>
 
       {/* Right Pills */}
-      <div ref={pillsRef} className="absolute flex flex-col gap-5" style={{ left: '72vw', top: '24vh' }}>
+      <div ref={pillsRef} className="aura-pill-stack flex flex-col gap-5">
         <div className="rpill">
           <GlassPill icon={<Leaf size={16} className="text-lime-dark" />}>100% Natural</GlassPill>
         </div>
@@ -91,7 +90,7 @@ export default function Section2Milk() {
       </div>
 
       {/* Micro Pills */}
-      <div ref={microRef} className="absolute left-1/2 bottom-[6vh] -translate-x-1/2 flex gap-3">
+      <div ref={microRef} className="aura-micro-row">
         <GlassPill>Grass-fed</GlassPill>
         <GlassPill>Hormone-free</GlassPill>
         <GlassPill>Local farms</GlassPill>

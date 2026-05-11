@@ -59,47 +59,45 @@ export default function Section7Factory() {
   ];
 
   return (
-    <section ref={sectionRef} className="relative w-full h-screen overflow-hidden" style={{ zIndex: 70 }}>
+    <section ref={sectionRef} className="aura-section relative w-full h-screen overflow-hidden" style={{ zIndex: 70 }}>
       {/* Background */}
       <div className="absolute inset-0">
-        <img src="/images/factory_line_bg.jpg" alt="Factory packaging line" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-r from-lime/50 via-lime/20 to-transparent" />
+        <img src="/images/factory_line_bg.jpg" alt="Factory packaging line" className="aura-bg-image" />
+        <div className="aura-image-overlay" />
       </div>
 
       {/* Left Panel */}
       <div
         ref={panelRef}
-        className="absolute glass-panel p-8"
-        style={{ left: '6vw', top: '22vh', width: '42vw', height: '56vh', maxWidth: '560px' }}
+        className="aura-copy-panel glass-panel"
       >
-        <h2 className="font-display font-bold text-[#111] text-shadow-display leading-[0.95]">
-          <span className="word block text-[clamp(28px,4vw,56px)] uppercase tracking-tight">Factory</span>
-          <span className="word block text-[clamp(28px,4vw,56px)] uppercase tracking-tight mt-1">Packaging</span>
+        <h2 className="aura-display aura-display-md text-shadow-display">
+          <span className="word aura-heading-line">Factory</span>
+          <span className="word aura-heading-line mt-1">Packaging</span>
         </h2>
-        <p className="word mt-8 font-body text-[clamp(13px,1.1vw,16px)] text-[#2B2B2B] leading-relaxed max-w-[90%]">
-          Sealed fresh, labeled clearly, and shipped cold—so what leaves the line tastes like it was made today.
+        <p className="word aura-copy mt-8">
+          Sealed fresh, labeled clearly, and shipped cold - so what leaves the line tastes like it was made today.
         </p>
       </div>
 
       {/* Right 2x2 Grid */}
       <div
         ref={gridRef}
-        className="absolute grid grid-cols-2 gap-4"
-        style={{ left: '62vw', top: '22vh', width: '28vw', maxWidth: '360px' }}
+        className="aura-feature-grid grid grid-cols-2 gap-4"
       >
         {items.map((item, i) => (
           <div key={i} className="grid-item glass-panel aspect-square flex flex-col items-center justify-center gap-3 p-4">
             <span className="text-lime-dark">{item.icon}</span>
-            <span className="font-label text-xs uppercase tracking-widest text-[#2B2B2B] text-center">{item.label}</span>
+            <span className="font-label text-xs uppercase tracking-widest text-[#243329] text-center">{item.label}</span>
           </div>
         ))}
       </div>
 
       {/* Micro Pills */}
-      <div ref={microRef} className="absolute left-1/2 bottom-[6vh] -translate-x-1/2 flex gap-3">
-        <div className="glass-pill px-4 py-2"><span className="font-label text-xs uppercase tracking-widest text-[#2B2B2B]">Hygienic</span></div>
-        <div className="glass-pill px-4 py-2"><span className="font-label text-xs uppercase tracking-widest text-[#2B2B2B]">Fresh</span></div>
-        <div className="glass-pill px-4 py-2"><span className="font-label text-xs uppercase tracking-widest text-[#2B2B2B]">Reliable</span></div>
+      <div ref={microRef} className="aura-micro-row">
+        <div className="glass-pill px-4 py-2"><span className="font-label text-xs uppercase tracking-widest text-[#243329]">Hygienic</span></div>
+        <div className="glass-pill px-4 py-2"><span className="font-label text-xs uppercase tracking-widest text-[#243329]">Fresh</span></div>
+        <div className="glass-pill px-4 py-2"><span className="font-label text-xs uppercase tracking-widest text-[#243329]">Reliable</span></div>
       </div>
     </section>
   );

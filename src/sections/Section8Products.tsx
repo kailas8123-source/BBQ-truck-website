@@ -74,33 +74,33 @@ export default function Section8Products() {
   }, []);
 
   const products = [
-    { image: '/images/product_cup.jpg', title: 'Ice Cream Cup', specs: 'Creamy \u00b7 120 ml' },
-    { image: '/images/product_cone.jpg', title: 'Cone Bar', specs: 'Crispy \u00b7 90 ml' },
-    { image: '/images/product_tub.jpg', title: 'Family Tub', specs: 'Share size \u00b7 500 ml' },
+    { image: '/images/product_cup.jpg', title: 'Ice Cream Cup', specs: 'Creamy - 120 ml' },
+    { image: '/images/product_cone.jpg', title: 'Cone Bar', specs: 'Crispy - 90 ml' },
+    { image: '/images/product_tub.jpg', title: 'Family Tub', specs: 'Share size - 500 ml' },
   ];
 
   return (
     <section
       ref={sectionRef}
       id="products"
-      className="relative w-full min-h-screen py-[10vh]"
-      style={{ zIndex: 80, background: 'linear-gradient(180deg, #B6FF70 0%, #A8F060 100%)' }}
+      className="relative w-full min-h-screen py-[10vh] overflow-hidden"
+      style={{ zIndex: 80, background: 'linear-gradient(135deg, #F7FFFC 0%, #B6FF70 42%, #B3E0FF 100%)' }}
     >
       {/* Subtle vignette */}
-      <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.05) 100%)' }} />
+      <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.45), rgba(247,255,252,0.1)), radial-gradient(ellipse at center, transparent 48%, rgba(28,54,42,0.08) 100%)' }} />
 
       <div className="relative max-w-7xl mx-auto px-6">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
           {/* Left Heading */}
           <div ref={headingRef} className="lg:w-[40%] lg:sticky lg:top-[20vh] lg:self-start">
-            <h2 className="font-display font-bold text-[#111] text-shadow-display leading-[0.95]">
-              <span className="block text-[clamp(32px,5vw,64px)] uppercase tracking-tight">Our</span>
-              <span className="block text-[clamp(32px,5vw,64px)] uppercase tracking-tight mt-1">Products</span>
+            <h2 className="aura-display aura-display-md text-shadow-display">
+              <span className="aura-heading-line">Our</span>
+              <span className="aura-heading-line mt-1">Products</span>
             </h2>
-            <p className="mt-6 font-body text-[clamp(14px,1.2vw,18px)] text-[#2B2B2B] leading-relaxed max-w-[90%]">
-              Cups, cones, and bars—crafted for everyday moments and big celebrations.
+            <p className="aura-copy mt-6">
+              Cups, cones, and bars - crafted for everyday moments and big celebrations.
             </p>
-            <a href="#" className="inline-flex items-center gap-2 mt-6 font-label text-sm uppercase tracking-wider text-[#111] hover:text-lime-dark transition-colors group">
+            <a href="#" className="aura-cta glass-pill inline-flex items-center gap-2 mt-6 px-5 py-3 font-label text-sm uppercase tracking-wider text-[#111] bg-white/80 group">
               View full range
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </a>
@@ -111,7 +111,7 @@ export default function Section8Products() {
             {products.map((product, i) => (
               <div
                 key={i}
-                className="product-card glass-card overflow-hidden hover:shadow-2xl transition-shadow duration-300"
+                className="product-card glass-card overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
@@ -122,7 +122,7 @@ export default function Section8Products() {
                 </div>
                 <div className="p-6">
                   <h3 className="font-display font-bold text-xl text-[#111]">{product.title}</h3>
-                  <p className="mt-1 font-label text-xs uppercase tracking-widest text-[#2B2B2B]">{product.specs}</p>
+                  <p className="mt-1 font-label text-xs uppercase tracking-widest text-[#243329]">{product.specs}</p>
                 </div>
               </div>
             ))}

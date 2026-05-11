@@ -52,30 +52,29 @@ export default function Section3Fruit() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative w-full h-screen overflow-hidden" style={{ zIndex: 30 }}>
+    <section ref={sectionRef} className="aura-section relative w-full h-screen overflow-hidden" style={{ zIndex: 30 }}>
       {/* Background */}
       <div className="absolute inset-0">
-        <img src="/images/berry_pour_bg.jpg" alt="Pouring berries" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-r from-lime/50 via-lime/20 to-transparent" />
+        <img src="/images/berry_pour_bg.jpg" alt="Pouring berries" className="aura-bg-image" />
+        <div className="aura-image-overlay" />
       </div>
 
       {/* Left Panel */}
       <div
         ref={panelRef}
-        className="absolute glass-panel p-8"
-        style={{ left: '6vw', top: '22vh', width: '42vw', height: '56vh', maxWidth: '560px' }}
+        className="aura-copy-panel glass-panel"
       >
-        <h2 className="font-display font-bold text-[#111] text-shadow-display leading-[0.95]">
-          <span className="word block text-[clamp(28px,4vw,56px)] uppercase tracking-tight">Fruit</span>
-          <span className="word block text-[clamp(28px,4vw,56px)] uppercase tracking-tight mt-1">Mixing</span>
+        <h2 className="aura-display aura-display-md text-shadow-display">
+          <span className="word aura-heading-line">Fruit</span>
+          <span className="word aura-heading-line mt-1">Mixing</span>
         </h2>
-        <p className="word mt-8 font-body text-[clamp(13px,1.1vw,16px)] text-[#2B2B2B] leading-relaxed max-w-[90%]">
-          Whole fruits. Real color. No shortcuts—just balanced sweetness and honest flavor.
+        <p className="word aura-copy mt-8">
+          Whole fruits. Real color. No shortcuts - just balanced sweetness and honest flavor.
         </p>
       </div>
 
       {/* Right Stack */}
-      <div ref={stackRef} className="absolute flex flex-col gap-4" style={{ left: '72vw', top: '24vh', width: '18vw' }}>
+      <div ref={stackRef} className="aura-pill-stack flex flex-col gap-4">
         {[
           { icon: <Apple size={18} />, label: 'Whole Fruit' },
           { icon: <Palette size={18} />, label: 'Real Color' },
@@ -83,21 +82,21 @@ export default function Section3Fruit() {
         ].map((item, i) => (
           <div key={i} className="stack-item glass-panel px-5 py-4 flex items-center gap-3">
             <span className="text-lime-dark">{item.icon}</span>
-            <span className="font-label text-xs uppercase tracking-widest text-[#2B2B2B]">{item.label}</span>
+            <span className="font-label text-xs uppercase tracking-widest text-[#243329]">{item.label}</span>
           </div>
         ))}
       </div>
 
       {/* Micro Pills */}
-      <div ref={microRef} className="absolute left-1/2 bottom-[6vh] -translate-x-1/2 flex gap-3">
+      <div ref={microRef} className="aura-micro-row">
         <div className="glass-pill px-4 py-2">
-          <span className="font-label text-xs uppercase tracking-widest text-[#2B2B2B]">Strawberry</span>
+          <span className="font-label text-xs uppercase tracking-widest text-[#243329]">Strawberry</span>
         </div>
         <div className="glass-pill px-4 py-2">
-          <span className="font-label text-xs uppercase tracking-widest text-[#2B2B2B]">Blueberry</span>
+          <span className="font-label text-xs uppercase tracking-widest text-[#243329]">Blueberry</span>
         </div>
         <div className="glass-pill px-4 py-2">
-          <span className="font-label text-xs uppercase tracking-widest text-[#2B2B2B]">Raspberry</span>
+          <span className="font-label text-xs uppercase tracking-widest text-[#243329]">Raspberry</span>
         </div>
       </div>
     </section>

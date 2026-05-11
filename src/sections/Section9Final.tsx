@@ -73,11 +73,11 @@ export default function Section9Final() {
   ];
 
   return (
-    <section ref={sectionRef} className="relative w-full h-screen overflow-hidden" style={{ zIndex: 90 }}>
+    <section ref={sectionRef} className="aura-section relative w-full h-screen overflow-hidden" style={{ zIndex: 90 }}>
       {/* Background */}
       <div className="absolute inset-0">
-        <img src="/images/final_cone_bg.jpg" alt="Enjoying ice cream cone" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-r from-lime/40 via-lime/20 to-transparent" />
+        <img src="/images/final_cone_bg.jpg" alt="Enjoying ice cream cone" className="aura-bg-image" />
+        <div className="aura-image-overlay" />
       </div>
 
       {/* Mint overlay for background transition */}
@@ -86,35 +86,33 @@ export default function Section9Final() {
       {/* Left Panel */}
       <div
         ref={panelRef}
-        className="absolute glass-panel p-8"
-        style={{ left: '6vw', top: '22vh', width: '42vw', height: '56vh', maxWidth: '560px' }}
+        className="aura-copy-panel glass-panel"
       >
-        <h2 className="font-display font-bold text-[#111] text-shadow-display leading-[0.95]">
-          <span className="word block text-[clamp(28px,4vw,56px)] uppercase tracking-tight">Ready To</span>
-          <span className="word block text-[clamp(28px,4vw,56px)] uppercase tracking-tight mt-1">Scoop?</span>
+        <h2 className="aura-display aura-display-md text-shadow-display">
+          <span className="word aura-heading-line">Ready To</span>
+          <span className="word aura-heading-line mt-1">Scoop?</span>
         </h2>
-        <p className="word mt-8 font-body text-[clamp(13px,1.1vw,16px)] text-[#2B2B2B] leading-relaxed max-w-[90%]">
-          Find a store near you or order online—your next favorite flavor is waiting.
+        <p className="word aura-copy mt-8">
+          Find a store near you or order online - your next favorite flavor is waiting.
         </p>
       </div>
 
       {/* Right 2x2 Grid */}
       <div
         ref={gridRef}
-        className="absolute grid grid-cols-2 gap-4"
-        style={{ left: '62vw', top: '22vh', width: '28vw', maxWidth: '360px' }}
+        className="aura-feature-grid grid grid-cols-2 gap-4"
       >
         {gridItems.map((item, i) => (
           <div key={i} className="grid-item glass-panel aspect-square flex flex-col items-center justify-center gap-3 p-4 cursor-pointer hover:bg-white/85 transition-colors">
             <span className="text-lime-dark">{item.icon}</span>
-            <span className="font-label text-xs uppercase tracking-widest text-[#2B2B2B] text-center">{item.label}</span>
+            <span className="font-label text-xs uppercase tracking-widest text-[#243329] text-center">{item.label}</span>
           </div>
         ))}
       </div>
 
       {/* CTA Button */}
       <div ref={ctaRef} className="absolute left-1/2 bottom-[14vh] -translate-x-1/2">
-        <button className="glass-pill px-8 py-4 flex items-center gap-3 bg-sky-accent/90 hover:bg-sky-accent transition-all hover:-translate-y-0.5 hover:shadow-xl">
+        <button className="aura-cta glass-pill px-8 py-4 flex items-center gap-3 bg-sky-accent/90 hover:bg-sky-accent">
           <span className="font-label text-sm uppercase tracking-wider">Order now</span>
           <ArrowRight size={18} />
         </button>
@@ -126,10 +124,10 @@ export default function Section9Final() {
       </div>
 
       {/* Micro Pills */}
-      <div ref={microRef} className="absolute left-1/2 bottom-[5vh] -translate-x-1/2 flex gap-3">
-        <div className="glass-pill px-4 py-2"><span className="font-label text-xs uppercase tracking-widest text-[#2B2B2B]">Fast Delivery</span></div>
-        <div className="glass-pill px-4 py-2"><span className="font-label text-xs uppercase tracking-widest text-[#2B2B2B]">Fresh Pack</span></div>
-        <div className="glass-pill px-4 py-2"><span className="font-label text-xs uppercase tracking-widest text-[#2B2B2B]">Happiness Guaranteed</span></div>
+      <div ref={microRef} className="aura-micro-row">
+        <div className="glass-pill px-4 py-2"><span className="font-label text-xs uppercase tracking-widest text-[#243329]">Fast Delivery</span></div>
+        <div className="glass-pill px-4 py-2"><span className="font-label text-xs uppercase tracking-widest text-[#243329]">Fresh Pack</span></div>
+        <div className="glass-pill px-4 py-2"><span className="font-label text-xs uppercase tracking-widest text-[#243329]">Happiness Guaranteed</span></div>
       </div>
     </section>
   );

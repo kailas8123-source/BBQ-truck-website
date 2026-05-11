@@ -80,7 +80,7 @@ export default function Section1Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full h-screen overflow-hidden"
+      className="aura-section relative w-full h-screen overflow-hidden"
       style={{ zIndex: 10 }}
     >
       {/* Background Image */}
@@ -90,16 +90,16 @@ export default function Section1Hero() {
           alt="Modern kitchen"
           decoding="async"
           fetchPriority="high"
-          className="w-full h-full object-cover"
+          className="aura-bg-image"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-lime/40 via-lime/20 to-transparent" />
+        <div className="aura-image-overlay" />
       </div>
 
       {/* Top Right Badge */}
-      <div className="absolute right-[3vw] top-[10vh] w-[11vh] h-[11vh] rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center shadow-lg border border-white/60 z-20">
+      <div className="aura-badge rounded-full bg-white/85 backdrop-blur-md flex items-center justify-center shadow-lg border border-white/70 z-20">
         <div className="text-center">
           <Leaf size={20} className="mx-auto text-lime-dark mb-0.5" />
-          <span className="font-label text-[10px] uppercase tracking-wider text-[#2B2B2B] block">Natural</span>
+          <span className="font-label text-[10px] uppercase tracking-wider text-[#243329] block">Natural</span>
         </div>
         <Sparkles className="-top-4 -right-4" />
       </div>
@@ -107,23 +107,15 @@ export default function Section1Hero() {
       {/* Center Card */}
       <div
         ref={cardRef}
-        className="absolute glass-panel"
-        style={{
-          left: '50%',
-          top: '18vh',
-          width: '56vw',
-          height: '62vh',
-          transform: 'translateX(-50%)',
-          maxWidth: '800px',
-        }}
+        className="aura-hero-panel glass-panel"
       >
         {/* Headline */}
-        <div ref={headlineRef} className="absolute left-[7%] top-[12%] w-[86%]">
-          <h1 className="font-display font-bold text-[#111] text-shadow-display leading-[0.95]">
-            <span className="word block text-[clamp(36px,5vw,72px)] uppercase tracking-tight">Frozen</span>
-            <span className="word block text-[clamp(48px,7vw,108px)] uppercase tracking-tight mt-1">Joy</span>
+        <div ref={headlineRef} className="relative z-10 max-w-[38rem]">
+          <h1 className="aura-display aura-display-lg text-shadow-display">
+            <span className="word aura-heading-line">Frozen</span>
+            <span className="word aura-heading-line mt-1">Joy</span>
           </h1>
-          <p className="word mt-6 font-body text-[clamp(13px,1.1vw,16px)] text-[#2B2B2B] max-w-[80%] leading-relaxed">
+          <p className="word aura-copy mt-6">
             Made with fresh milk, real fruit & naturally delicious.
           </p>
         </div>
@@ -144,7 +136,7 @@ export default function Section1Hero() {
         {/* CTA */}
         <button
           ref={ctaRef}
-          className="absolute left-[7%] bottom-[10%] glass-pill px-6 py-3 flex items-center gap-2 bg-sky-accent/80 hover:bg-sky-accent transition-all hover:-translate-y-0.5 hover:shadow-lg"
+          className="aura-cta absolute left-[clamp(24px,4vw,56px)] bottom-[clamp(24px,7vh,64px)] glass-pill px-6 py-3 flex items-center gap-2 bg-sky-accent/90 hover:bg-sky-accent"
         >
           <span className="font-label text-sm uppercase tracking-wider">Explore flavors</span>
           <ArrowRight size={16} />
@@ -159,7 +151,7 @@ export default function Section1Hero() {
       {/* Bottom Micro Pills */}
       <div
         ref={microPillsRef}
-        className="absolute left-1/2 bottom-[5vh] -translate-x-1/2 flex gap-3"
+        className="aura-micro-row"
       >
         <GlassPill>Natural</GlassPill>
         <GlassPill>Creamy</GlassPill>

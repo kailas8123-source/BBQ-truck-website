@@ -19,7 +19,7 @@ export default function Mascot({ className = '', bubbleText, bubblePosition = 'r
           className={`absolute ${bubbleClass} glass-pill px-4 py-2 whitespace-nowrap z-10`}
           style={{ animation: 'float 3s ease-in-out infinite' }}
         >
-          <span className="font-body text-sm text-[#2B2B2B]">{bubbleText}</span>
+          <span className="font-body text-sm text-[#243329]">{bubbleText}</span>
           <div
             className="absolute w-3 h-3 bg-white/78 rotate-45"
             style={{

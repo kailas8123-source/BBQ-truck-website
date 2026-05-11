@@ -20,15 +20,14 @@ export default function Navbar() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-6 py-4 transition-all duration-300"
+      className={`fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 transition-all duration-300 ${scrolled ? 'aura-nav-shell shadow-lg shadow-emerald-950/10' : 'bg-white/10 backdrop-blur-sm'}`}
       style={{
-        background: scrolled ? 'rgba(182,255,112,0.85)' : 'transparent',
-        backdropFilter: scrolled ? 'blur(12px) saturate(1.2)' : 'none',
-        WebkitBackdropFilter: scrolled ? 'blur(12px) saturate(1.2)' : 'none',
+        backdropFilter: scrolled ? undefined : 'blur(8px) saturate(1.15)',
+        WebkitBackdropFilter: scrolled ? undefined : 'blur(8px) saturate(1.15)',
       }}
     >
       <div className="flex items-center gap-2">
-        <div className="w-10 h-10 rounded-full bg-white/80 flex items-center justify-center shadow-md">
+        <div className="w-10 h-10 rounded-full bg-white/85 flex items-center justify-center shadow-md ring-1 ring-white/70">
           <span className="font-display font-bold text-lg text-lime-dark">C</span>
         </div>
         <span className="font-display font-bold text-xl text-[#111]">Creamella</span>
@@ -40,17 +39,22 @@ export default function Navbar() {
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
-              className="font-label text-xs uppercase tracking-widest text-[#2B2B2B] hover:text-[#111] transition-colors"
+              className="font-label text-xs uppercase tracking-widest text-[#243329] hover:text-[#111] transition-colors"
             >
               {item}
             </a>
           ))}
         </div>
-        <button className="glass-pill px-5 py-2.5 flex items-center gap-2 bg-sky-accent/80 hover:bg-sky-accent transition-all hover:-translate-y-0.5">
+        <button className="glass-pill aura-cta px-5 py-2.5 flex items-center gap-2 bg-sky-accent/85 hover:bg-sky-accent">
           <ShoppingBag size={16} />
           <span className="font-label text-xs uppercase tracking-widest">Shop</span>
         </button>
       </div>
+
+      <button className="md:hidden glass-pill aura-cta px-4 py-2 flex items-center gap-2 bg-sky-accent/85">
+        <ShoppingBag size={16} />
+        <span className="font-label text-xs uppercase tracking-widest">Shop</span>
+      </button>
     </nav>
   );
 }
